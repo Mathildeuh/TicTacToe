@@ -1,0 +1,9 @@
+name: TicTacToe
+version: '1.0-SNAPSHOT'
+main: fr.mathilde.ticTacToe.TicTacToe
+api-version: '1.21'
+commands:
+  tictactoe:
+    description: Start a game of TicTacToe
+    usage: /tictactoe [player|stats]
+    aliases: ttt
