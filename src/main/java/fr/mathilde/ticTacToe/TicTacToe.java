@@ -21,7 +21,10 @@ import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Random;
 
 public class TicTacToe extends JavaPlugin implements Listener, CommandExecutor {
     // Game configuration constants
@@ -528,7 +531,7 @@ public class TicTacToe extends JavaPlugin implements Listener, CommandExecutor {
 
     private void spawnCreeperFirework(Player winner) {
         Location loc = winner.getLocation();
-        Firework fw = loc.getWorld().spawn(loc, Firework.class);
+        Firework fw = loc.getWorld().spawn(loc.add(0, 2, 0), Firework.class);
         FireworkMeta fwMeta = fw.getFireworkMeta();
 
         fwMeta.addEffect(FireworkEffect.builder()
@@ -536,9 +539,10 @@ public class TicTacToe extends JavaPlugin implements Listener, CommandExecutor {
                 .withFade(Color.LIME)
                 .with(FireworkEffect.Type.CREEPER)
                 .trail(true)
+                .flicker(true)
                 .build());
 
-        fwMeta.setPower(2);
+        fwMeta.setPower(0);
         fw.setFireworkMeta(fwMeta);
     }
 }
