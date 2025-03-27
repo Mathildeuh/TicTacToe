@@ -1,5 +1,5 @@
 name: TicTacToe
-version: '1.0-SNAPSHOT'
+version: '1.0.0'
 main: fr.mathilde.ticTacToe.TicTacToe
 api-version: '1.21'
 commands:
