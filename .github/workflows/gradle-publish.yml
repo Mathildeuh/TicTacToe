@@ -11,11 +11,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-      id-token: write
-      releases: write  # Ajout des permissions nécessaires pour publier une release
+  permissions:
+    contents: read
+    packages: write
+    releases: write  # Cette permission est cruciale pour interagir avec les releases
+    id-token: write
+
 
     steps:
     - name: Checkout repository
