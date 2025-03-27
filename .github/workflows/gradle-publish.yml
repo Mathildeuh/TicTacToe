@@ -41,3 +41,8 @@ jobs:
       with:
         name: minecraft-plugin
         path: build/libs/*.jar
+
+    - name: Upload Release Asset
+      uses: softprops/action-gh-release@v1
+      with:
+        files: build/libs/*.jar
