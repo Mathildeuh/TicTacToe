@@ -14,6 +14,8 @@ jobs:
     permissions:
       contents: read
       packages: write
+      id-token: write
+      releases: write  # Ajout des permissions nécessaires pour publier une release
 
     steps:
     - name: Checkout repository
